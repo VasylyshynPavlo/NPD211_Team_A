@@ -28,211 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ItemsListBox = new ListBox();
-            ControlsButtonsGroupBox = new GroupBox();
-            ControlsAddButton = new Button();
-            ControlsDeleteButton = new Button();
-            ControlsViewButton = new Button();
-            BalanceTextLable = new Label();
-            BalanceValueLabel = new Label();
-            BalanceUpdateButton = new Button();
-            ViewByGroupBox = new GroupBox();
-            ViewByDayButton = new Button();
-            ViewByMonthButton = new Button();
-            ViewByYearButton = new Button();
-            ViewByCustomButton = new Button();
-            SaveStatusLabel = new Label();
-            SaveButton = new Button();
-            ControlsButtonsGroupBox.SuspendLayout();
-            ViewByGroupBox.SuspendLayout();
+            ItemsListView = new ListView();
+            Category = new ColumnHeader();
+            Date = new ColumnHeader();
+            Money = new ColumnHeader();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            loadToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            addToolStripMenuItem = new ToolStripMenuItem();
+            removeToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem1 = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            dayToolStripMenuItem = new ToolStripMenuItem();
+            dayToolStripMenuItem1 = new ToolStripMenuItem();
+            monthToolStripMenuItem = new ToolStripMenuItem();
+            yearToolStripMenuItem = new ToolStripMenuItem();
+            customToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
+            label2 = new Label();
+            panel1 = new Panel();
+            menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // ItemsListBox
+            // ItemsListView
             // 
-            ItemsListBox.FormattingEnabled = true;
-            ItemsListBox.ItemHeight = 15;
-            ItemsListBox.Location = new Point(12, 12);
-            ItemsListBox.Name = "ItemsListBox";
-            ItemsListBox.Size = new Size(299, 424);
-            ItemsListBox.TabIndex = 0;
+            ItemsListView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
+            ItemsListView.Location = new Point(0, 24);
+            ItemsListView.Name = "ItemsListView";
+            ItemsListView.Size = new Size(453, 538);
+            ItemsListView.TabIndex = 8;
+            ItemsListView.UseCompatibleStateImageBehavior = false;
+            ItemsListView.View = View.Details;
             // 
-            // ControlsButtonsGroupBox
+            // Category
             // 
-            ControlsButtonsGroupBox.Controls.Add(ControlsViewButton);
-            ControlsButtonsGroupBox.Controls.Add(ControlsDeleteButton);
-            ControlsButtonsGroupBox.Controls.Add(ControlsAddButton);
-            ControlsButtonsGroupBox.Location = new Point(317, 12);
-            ControlsButtonsGroupBox.Name = "ControlsButtonsGroupBox";
-            ControlsButtonsGroupBox.Size = new Size(200, 112);
-            ControlsButtonsGroupBox.TabIndex = 1;
-            ControlsButtonsGroupBox.TabStop = false;
-            ControlsButtonsGroupBox.Text = "Controls";
+            Category.Text = "Category";
+            Category.Width = 157;
             // 
-            // ControlsAddButton
+            // Date
             // 
-            ControlsAddButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ControlsAddButton.Location = new Point(6, 22);
-            ControlsAddButton.Name = "ControlsAddButton";
-            ControlsAddButton.Size = new Size(188, 23);
-            ControlsAddButton.TabIndex = 2;
-            ControlsAddButton.Text = "Add";
-            ControlsAddButton.UseVisualStyleBackColor = true;
+            Date.Text = "Date";
+            Date.Width = 120;
             // 
-            // ControlsDeleteButton
+            // Money
             // 
-            ControlsDeleteButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ControlsDeleteButton.Location = new Point(6, 50);
-            ControlsDeleteButton.Name = "ControlsDeleteButton";
-            ControlsDeleteButton.Size = new Size(188, 23);
-            ControlsDeleteButton.TabIndex = 4;
-            ControlsDeleteButton.Text = "Delete";
-            ControlsDeleteButton.UseVisualStyleBackColor = true;
+            Money.Text = "Money";
+            Money.Width = 170;
             // 
-            // ControlsViewButton
+            // menuStrip1
             // 
-            ControlsViewButton.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ControlsViewButton.Location = new Point(6, 79);
-            ControlsViewButton.Name = "ControlsViewButton";
-            ControlsViewButton.Size = new Size(188, 23);
-            ControlsViewButton.TabIndex = 5;
-            ControlsViewButton.Text = "View";
-            ControlsViewButton.UseVisualStyleBackColor = true;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, viewToolStripMenuItem, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(453, 24);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // BalanceTextLable
+            // fileToolStripMenuItem
             // 
-            BalanceTextLable.AutoSize = true;
-            BalanceTextLable.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            BalanceTextLable.Location = new Point(317, 127);
-            BalanceTextLable.Name = "BalanceTextLable";
-            BalanceTextLable.Size = new Size(147, 25);
-            BalanceTextLable.TabIndex = 2;
-            BalanceTextLable.Text = "Current balance";
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, loadToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Text = "File";
             // 
-            // BalanceValueLabel
+            // saveToolStripMenuItem
             // 
-            BalanceValueLabel.AutoSize = true;
-            BalanceValueLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            BalanceValueLabel.Location = new Point(317, 152);
-            BalanceValueLabel.Name = "BalanceValueLabel";
-            BalanceValueLabel.Size = new Size(17, 19);
-            BalanceValueLabel.TabIndex = 3;
-            BalanceValueLabel.Text = "0";
+            saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
+            saveToolStripMenuItem.Size = new Size(180, 22);
+            saveToolStripMenuItem.Text = "Save";
             // 
-            // BalanceUpdateButton
+            // loadToolStripMenuItem
             // 
-            BalanceUpdateButton.Location = new Point(317, 174);
-            BalanceUpdateButton.Name = "BalanceUpdateButton";
-            BalanceUpdateButton.Size = new Size(75, 23);
-            BalanceUpdateButton.TabIndex = 4;
-            BalanceUpdateButton.Text = "Update";
-            BalanceUpdateButton.UseVisualStyleBackColor = true;
+            loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
+            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
+            loadToolStripMenuItem.Size = new Size(180, 22);
+            loadToolStripMenuItem.Text = "Load";
             // 
-            // ViewByGroupBox
+            // exitToolStripMenuItem
             // 
-            ViewByGroupBox.Controls.Add(ViewByCustomButton);
-            ViewByGroupBox.Controls.Add(ViewByYearButton);
-            ViewByGroupBox.Controls.Add(ViewByMonthButton);
-            ViewByGroupBox.Controls.Add(ViewByDayButton);
-            ViewByGroupBox.Location = new Point(317, 203);
-            ViewByGroupBox.Name = "ViewByGroupBox";
-            ViewByGroupBox.Size = new Size(200, 140);
-            ViewByGroupBox.TabIndex = 5;
-            ViewByGroupBox.TabStop = false;
-            ViewByGroupBox.Text = "View by";
+            exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // ViewByDayButton
+            // editToolStripMenuItem
             // 
-            ViewByDayButton.Location = new Point(6, 22);
-            ViewByDayButton.Name = "ViewByDayButton";
-            ViewByDayButton.Size = new Size(188, 23);
-            ViewByDayButton.TabIndex = 0;
-            ViewByDayButton.Text = "Day";
-            ViewByDayButton.UseVisualStyleBackColor = true;
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addToolStripMenuItem, removeToolStripMenuItem, viewToolStripMenuItem1 });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(39, 20);
+            editToolStripMenuItem.Text = "Edit";
             // 
-            // ViewByMonthButton
+            // addToolStripMenuItem
             // 
-            ViewByMonthButton.Location = new Point(6, 51);
-            ViewByMonthButton.Name = "ViewByMonthButton";
-            ViewByMonthButton.Size = new Size(188, 23);
-            ViewByMonthButton.TabIndex = 1;
-            ViewByMonthButton.Text = "Month";
-            ViewByMonthButton.UseVisualStyleBackColor = true;
+            addToolStripMenuItem.Image = Properties.Resources._352006_add_ic_outline_circle;
+            addToolStripMenuItem.Name = "addToolStripMenuItem";
+            addToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
+            addToolStripMenuItem.Size = new Size(141, 22);
+            addToolStripMenuItem.Text = "Add";
             // 
-            // ViewByYearButton
+            // removeToolStripMenuItem
             // 
-            ViewByYearButton.Location = new Point(6, 80);
-            ViewByYearButton.Name = "ViewByYearButton";
-            ViewByYearButton.Size = new Size(188, 23);
-            ViewByYearButton.TabIndex = 2;
-            ViewByYearButton.Text = "Year";
-            ViewByYearButton.UseVisualStyleBackColor = true;
+            removeToolStripMenuItem.Image = Properties.Resources._352442_remove_outline_ic_circle;
+            removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            removeToolStripMenuItem.ShortcutKeyDisplayString = "Del";
+            removeToolStripMenuItem.Size = new Size(141, 22);
+            removeToolStripMenuItem.Text = "Remove";
             // 
-            // ViewByCustomButton
+            // viewToolStripMenuItem1
             // 
-            ViewByCustomButton.Location = new Point(6, 109);
-            ViewByCustomButton.Name = "ViewByCustomButton";
-            ViewByCustomButton.Size = new Size(188, 23);
-            ViewByCustomButton.TabIndex = 3;
-            ViewByCustomButton.Text = "Custom";
-            ViewByCustomButton.UseVisualStyleBackColor = true;
+            viewToolStripMenuItem1.Image = Properties.Resources._352202_view_day_ic;
+            viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            viewToolStripMenuItem1.ShortcutKeyDisplayString = "Enter";
+            viewToolStripMenuItem1.Size = new Size(141, 22);
+            viewToolStripMenuItem1.Text = "View";
             // 
-            // SaveStatusLabel
+            // viewToolStripMenuItem
             // 
-            SaveStatusLabel.AutoSize = true;
-            SaveStatusLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            SaveStatusLabel.ForeColor = Color.MediumSeaGreen;
-            SaveStatusLabel.Location = new Point(317, 415);
-            SaveStatusLabel.Name = "SaveStatusLabel";
-            SaveStatusLabel.Size = new Size(45, 19);
-            SaveStatusLabel.TabIndex = 6;
-            SaveStatusLabel.Text = "Saved";
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dayToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(44, 20);
+            viewToolStripMenuItem.Text = "View";
             // 
-            // SaveButton
+            // dayToolStripMenuItem
             // 
-            SaveButton.Location = new Point(442, 413);
-            SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(75, 23);
-            SaveButton.TabIndex = 7;
-            SaveButton.Text = "Save";
-            SaveButton.UseVisualStyleBackColor = true;
+            dayToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dayToolStripMenuItem1, monthToolStripMenuItem, yearToolStripMenuItem, customToolStripMenuItem });
+            dayToolStripMenuItem.Image = Properties.Resources._352202_view_day_ic;
+            dayToolStripMenuItem.Name = "dayToolStripMenuItem";
+            dayToolStripMenuItem.Size = new Size(124, 22);
+            dayToolStripMenuItem.Text = "Show last";
+            // 
+            // dayToolStripMenuItem1
+            // 
+            dayToolStripMenuItem1.Name = "dayToolStripMenuItem1";
+            dayToolStripMenuItem1.ShortcutKeyDisplayString = "F1";
+            dayToolStripMenuItem1.Size = new Size(135, 22);
+            dayToolStripMenuItem1.Text = "Day";
+            dayToolStripMenuItem1.Click += dayToolStripMenuItem1_Click;
+            // 
+            // monthToolStripMenuItem
+            // 
+            monthToolStripMenuItem.Name = "monthToolStripMenuItem";
+            monthToolStripMenuItem.ShortcutKeyDisplayString = "F2";
+            monthToolStripMenuItem.Size = new Size(135, 22);
+            monthToolStripMenuItem.Text = "Month";
+            monthToolStripMenuItem.Click += monthToolStripMenuItem_Click;
+            // 
+            // yearToolStripMenuItem
+            // 
+            yearToolStripMenuItem.Name = "yearToolStripMenuItem";
+            yearToolStripMenuItem.ShortcutKeyDisplayString = "F3";
+            yearToolStripMenuItem.Size = new Size(135, 22);
+            yearToolStripMenuItem.Text = "Year";
+            yearToolStripMenuItem.Click += yearToolStripMenuItem_Click;
+            // 
+            // customToolStripMenuItem
+            // 
+            customToolStripMenuItem.Image = Properties.Resources._352548_ic_more_three_dots_dots_horiz;
+            customToolStripMenuItem.Name = "customToolStripMenuItem";
+            customToolStripMenuItem.ShortcutKeyDisplayString = "F4";
+            customToolStripMenuItem.Size = new Size(135, 22);
+            customToolStripMenuItem.Text = "Custom";
+            customToolStripMenuItem.Click += customToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.Image = Properties.Resources._352423_ic_help;
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(60, 20);
+            helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(3, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 25);
+            label1.TabIndex = 10;
+            label1.Text = "Balance:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(91, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 25);
+            label2.TabIndex = 11;
+            label2.Text = "0";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(0, 563);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(453, 44);
+            panel1.TabIndex = 12;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(529, 450);
-            Controls.Add(SaveButton);
-            Controls.Add(SaveStatusLabel);
-            Controls.Add(ViewByGroupBox);
-            Controls.Add(BalanceUpdateButton);
-            Controls.Add(BalanceValueLabel);
-            Controls.Add(BalanceTextLable);
-            Controls.Add(ControlsButtonsGroupBox);
-            Controls.Add(ItemsListBox);
+            ClientSize = new Size(453, 607);
+            Controls.Add(panel1);
+            Controls.Add(ItemsListView);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
-            ControlsButtonsGroupBox.ResumeLayout(false);
-            ViewByGroupBox.ResumeLayout(false);
+            KeyDown += Form1_KeyDown;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private ListBox ItemsListBox;
-        private GroupBox ControlsButtonsGroupBox;
-        private Button ControlsViewButton;
-        private Button ControlsDeleteButton;
-        private Button ControlsAddButton;
-        private Label BalanceTextLable;
-        private Label BalanceValueLabel;
-        private Button BalanceUpdateButton;
-        private GroupBox ViewByGroupBox;
-        private Button ViewByCustomButton;
-        private Button ViewByYearButton;
-        private Button ViewByMonthButton;
-        private Button ViewByDayButton;
-        private Label SaveStatusLabel;
-        private Button SaveButton;
+        private ListView ItemsListView;
+        private ColumnHeader Category;
+        private ColumnHeader Date;
+        private ColumnHeader Money;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem addToolStripMenuItem;
+        private ToolStripMenuItem removeToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem1;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem dayToolStripMenuItem;
+        private ToolStripMenuItem dayToolStripMenuItem1;
+        private ToolStripMenuItem monthToolStripMenuItem;
+        private ToolStripMenuItem yearToolStripMenuItem;
+        private ToolStripMenuItem customToolStripMenuItem;
+        private Label label1;
+        private Label label2;
+        private Panel panel1;
     }
 }
