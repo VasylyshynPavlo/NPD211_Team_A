@@ -16,5 +16,25 @@ namespace NPD211_Team_A
         {
             InitializeComponent();
         }
+
+        private void button_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        {
+            //file
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelp formHelp = new FormHelp();
+            formHelp.Show();
+        }
     }
 }
