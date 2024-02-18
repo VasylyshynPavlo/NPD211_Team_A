@@ -33,6 +33,9 @@
             label_Spending = new Label();
             label_IncomeSum = new Label();
             label_SpendingSum = new Label();
+            label_General = new Label();
+            label_Ingeneral = new Label();
+            button_Close = new Button();
             SuspendLayout();
             // 
             // listBox_MonthYearAlltime
@@ -80,11 +83,42 @@
             label_SpendingSum.TabIndex = 4;
             label_SpendingSum.Text = "Sum";
             // 
+            // label_General
+            // 
+            label_General.AutoSize = true;
+            label_General.Location = new Point(557, 64);
+            label_General.Name = "label_General";
+            label_General.Size = new Size(48, 25);
+            label_General.TabIndex = 6;
+            label_General.Text = "Sum";
+            // 
+            // label_Ingeneral
+            // 
+            label_Ingeneral.AutoSize = true;
+            label_Ingeneral.Location = new Point(443, 64);
+            label_Ingeneral.Name = "label_Ingeneral";
+            label_Ingeneral.Size = new Size(94, 25);
+            label_Ingeneral.TabIndex = 5;
+            label_Ingeneral.Text = "In general:";
+            // 
+            // button_Close
+            // 
+            button_Close.BackColor = Color.White;
+            button_Close.Location = new Point(676, 404);
+            button_Close.Name = "button_Close";
+            button_Close.Size = new Size(112, 34);
+            button_Close.TabIndex = 7;
+            button_Close.Text = "Close";
+            button_Close.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button_Close);
+            Controls.Add(label_General);
+            Controls.Add(label_Ingeneral);
             Controls.Add(label_SpendingSum);
             Controls.Add(label_IncomeSum);
             Controls.Add(label_Spending);
@@ -103,5 +137,8 @@
         private Label label_Spending;
         private Label label_IncomeSum;
         private Label label_SpendingSum;
+        private Label label_General;
+        private Label label_Ingeneral;
+        private Button button_Close;
     }
 }
