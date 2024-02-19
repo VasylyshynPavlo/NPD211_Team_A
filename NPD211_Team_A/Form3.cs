@@ -16,5 +16,11 @@ namespace NPD211_Team_A
         {
             InitializeComponent();
         }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelp formHelp = new FormHelp();
+            formHelp.Show();
+        }
     }
 }
