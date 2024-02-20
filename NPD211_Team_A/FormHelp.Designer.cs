@@ -39,14 +39,14 @@
             richTextBox1.Location = new Point(0, 0);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(996, 662);
+            richTextBox1.Size = new Size(438, 274);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // CloseButton
             // 
             CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            CloseButton.Location = new Point(909, 627);
+            CloseButton.Location = new Point(351, 239);
             CloseButton.Name = "CloseButton";
             CloseButton.Size = new Size(75, 23);
             CloseButton.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(996, 662);
+            ClientSize = new Size(438, 274);
             Controls.Add(CloseButton);
             Controls.Add(richTextBox1);
             Name = "FormHelp";
