@@ -2,6 +2,22 @@ namespace NPD211_Team_A
 {
     public partial class Form1 : Form
     {
+        private List<MoneyEntry> moneyEntryList = new List<MoneyEntry>();
+
+        public class MoneyEntry
+        {
+            public string CategoryEntry { get; set; }
+            public DateTime DateEntry { get; set; }
+            public int SumEntry { get; set; }
+
+            public MoneyEntry(string categoryEntry, DateTime dateEntry, int sumEntry) 
+            {
+                CategoryEntry = categoryEntry;
+                DateEntry = dateEntry;
+                SumEntry = sumEntry;
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
