@@ -37,7 +37,6 @@
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
-            loadToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             listView_MonthYearAlltime = new ListView();
@@ -121,7 +120,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, loadToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -133,14 +132,6 @@
             saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
             saveToolStripMenuItem.Size = new Size(180, 22);
             saveToolStripMenuItem.Text = "Save";
-            // 
-            // loadToolStripMenuItem
-            // 
-            loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
-            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            loadToolStripMenuItem.Size = new Size(180, 22);
-            loadToolStripMenuItem.Text = "Load";
             // 
             // exitToolStripMenuItem
             // 
@@ -163,9 +154,9 @@
             // 
             listView_MonthYearAlltime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView_MonthYearAlltime.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
-            listView_MonthYearAlltime.Location = new Point(0, 24);
+            listView_MonthYearAlltime.Location = new Point(0, 23);
             listView_MonthYearAlltime.Name = "listView_MonthYearAlltime";
-            listView_MonthYearAlltime.Size = new Size(453, 537);
+            listView_MonthYearAlltime.Size = new Size(453, 351);
             listView_MonthYearAlltime.TabIndex = 11;
             listView_MonthYearAlltime.UseCompatibleStateImageBehavior = false;
             listView_MonthYearAlltime.View = View.Details;
@@ -206,7 +197,7 @@
             panel1.Controls.Add(label_IncomeSum);
             panel1.Controls.Add(label_General);
             panel1.Controls.Add(label_SpendingSum);
-            panel1.Location = new Point(0, 559);
+            panel1.Location = new Point(0, 380);
             panel1.Name = "panel1";
             panel1.Size = new Size(453, 61);
             panel1.TabIndex = 13;
@@ -215,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 620);
+            ClientSize = new Size(453, 444);
             Controls.Add(panel1);
             Controls.Add(listView_MonthYearAlltime);
             Controls.Add(menuStrip1);
@@ -241,7 +232,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
-        private ToolStripMenuItem loadToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ListView listView_MonthYearAlltime;

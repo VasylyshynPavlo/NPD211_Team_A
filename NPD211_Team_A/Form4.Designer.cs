@@ -33,6 +33,7 @@
             Date = new ColumnHeader();
             Money = new ColumnHeader();
             panel1 = new Panel();
+            ResetButton = new Button();
             label_InGenenalSum = new Label();
             label_SpendingSum = new Label();
             label_IncomeSum = new Label();
@@ -56,7 +57,6 @@
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             saveToolStripMenuItem = new ToolStripMenuItem();
-            loadToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
@@ -73,8 +73,8 @@
             ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
             ItemsListView.Location = new Point(0, 27);
             ItemsListView.Name = "ItemsListView";
-            ItemsListView.Size = new Size(454, 436);
-            ItemsListView.TabIndex = 9;
+            ItemsListView.Size = new Size(454, 250);
+            ItemsListView.TabIndex = 0;
             ItemsListView.UseCompatibleStateImageBehavior = false;
             ItemsListView.View = View.Details;
             // 
@@ -96,6 +96,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(ResetButton);
             panel1.Controls.Add(label_InGenenalSum);
             panel1.Controls.Add(label_SpendingSum);
             panel1.Controls.Add(label_IncomeSum);
@@ -107,15 +108,24 @@
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(ChangePanel);
             panel1.Controls.Add(AgoGroupBox);
-            panel1.Location = new Point(0, 461);
+            panel1.Location = new Point(1, 283);
             panel1.Name = "panel1";
-            panel1.Size = new Size(453, 185);
+            panel1.Size = new Size(453, 161);
             panel1.TabIndex = 10;
+            // 
+            // ResetButton
+            // 
+            ResetButton.Location = new Point(204, 132);
+            ResetButton.Name = "ResetButton";
+            ResetButton.Size = new Size(75, 23);
+            ResetButton.TabIndex = 7;
+            ResetButton.Text = "Reset";
+            ResetButton.UseVisualStyleBackColor = true;
             // 
             // label_InGenenalSum
             // 
             label_InGenenalSum.AutoSize = true;
-            label_InGenenalSum.Location = new Point(94, 160);
+            label_InGenenalSum.Location = new Point(75, 127);
             label_InGenenalSum.Margin = new Padding(2, 0, 2, 0);
             label_InGenenalSum.Name = "label_InGenenalSum";
             label_InGenenalSum.Size = new Size(31, 15);
@@ -125,7 +135,7 @@
             // label_SpendingSum
             // 
             label_SpendingSum.AutoSize = true;
-            label_SpendingSum.Location = new Point(94, 144);
+            label_SpendingSum.Location = new Point(75, 111);
             label_SpendingSum.Margin = new Padding(2, 0, 2, 0);
             label_SpendingSum.Name = "label_SpendingSum";
             label_SpendingSum.Size = new Size(31, 15);
@@ -135,7 +145,7 @@
             // label_IncomeSum
             // 
             label_IncomeSum.AutoSize = true;
-            label_IncomeSum.Location = new Point(94, 129);
+            label_IncomeSum.Location = new Point(75, 97);
             label_IncomeSum.Margin = new Padding(2, 0, 2, 0);
             label_IncomeSum.Name = "label_IncomeSum";
             label_IncomeSum.Size = new Size(31, 15);
@@ -145,7 +155,7 @@
             // label_Income
             // 
             label_Income.AutoSize = true;
-            label_Income.Location = new Point(12, 129);
+            label_Income.Location = new Point(12, 97);
             label_Income.Margin = new Padding(2, 0, 2, 0);
             label_Income.Name = "label_Income";
             label_Income.Size = new Size(50, 15);
@@ -155,7 +165,7 @@
             // label_Spending
             // 
             label_Spending.AutoSize = true;
-            label_Spending.Location = new Point(11, 144);
+            label_Spending.Location = new Point(11, 112);
             label_Spending.Margin = new Padding(2, 0, 2, 0);
             label_Spending.Name = "label_Spending";
             label_Spending.Size = new Size(60, 15);
@@ -165,7 +175,7 @@
             // label_Ingeneral
             // 
             label_Ingeneral.AutoSize = true;
-            label_Ingeneral.Location = new Point(12, 159);
+            label_Ingeneral.Location = new Point(12, 127);
             label_Ingeneral.Margin = new Padding(2, 0, 2, 0);
             label_Ingeneral.Name = "label_Ingeneral";
             label_Ingeneral.Size = new Size(62, 15);
@@ -174,20 +184,20 @@
             // 
             // CloseButton
             // 
-            CloseButton.Location = new Point(366, 155);
+            CloseButton.Location = new Point(366, 132);
             CloseButton.Name = "CloseButton";
             CloseButton.Size = new Size(75, 23);
-            CloseButton.TabIndex = 3;
+            CloseButton.TabIndex = 9;
             CloseButton.Text = "Close";
             CloseButton.UseVisualStyleBackColor = true;
             CloseButton.Click += CloseButton_Click;
             // 
             // GoButton
             // 
-            GoButton.Location = new Point(137, 103);
+            GoButton.Location = new Point(285, 132);
             GoButton.Name = "GoButton";
             GoButton.Size = new Size(75, 23);
-            GoButton.TabIndex = 2;
+            GoButton.TabIndex = 8;
             GoButton.Text = "Go";
             GoButton.UseVisualStyleBackColor = true;
             // 
@@ -200,7 +210,7 @@
             groupBox1.Location = new Point(218, 42);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(223, 84);
-            groupBox1.TabIndex = 1;
+            groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "From To";
             // 
@@ -211,7 +221,7 @@
             ToDateTimePicker.Location = new Point(124, 45);
             ToDateTimePicker.Name = "ToDateTimePicker";
             ToDateTimePicker.Size = new Size(93, 23);
-            ToDateTimePicker.TabIndex = 3;
+            ToDateTimePicker.TabIndex = 6;
             // 
             // FromDateTimePicker
             // 
@@ -220,7 +230,7 @@
             FromDateTimePicker.Location = new Point(124, 16);
             FromDateTimePicker.Name = "FromDateTimePicker";
             FromDateTimePicker.Size = new Size(93, 23);
-            FromDateTimePicker.TabIndex = 2;
+            FromDateTimePicker.TabIndex = 5;
             // 
             // ToTextDate
             // 
@@ -257,7 +267,7 @@
             FromToButton.Location = new Point(253, 3);
             FromToButton.Name = "FromToButton";
             FromToButton.Size = new Size(68, 19);
-            FromToButton.TabIndex = 3;
+            FromToButton.TabIndex = 4;
             FromToButton.TabStop = true;
             FromToButton.Text = "From To";
             FromToButton.UseVisualStyleBackColor = true;
@@ -268,7 +278,7 @@
             YearsAgoButton.Location = new Point(172, 3);
             YearsAgoButton.Name = "YearsAgoButton";
             YearsAgoButton.Size = new Size(75, 19);
-            YearsAgoButton.TabIndex = 2;
+            YearsAgoButton.TabIndex = 3;
             YearsAgoButton.TabStop = true;
             YearsAgoButton.Text = "Years ago";
             YearsAgoButton.UseVisualStyleBackColor = true;
@@ -279,7 +289,7 @@
             MonthAgoButton.Location = new Point(82, 3);
             MonthAgoButton.Name = "MonthAgoButton";
             MonthAgoButton.Size = new Size(84, 19);
-            MonthAgoButton.TabIndex = 1;
+            MonthAgoButton.TabIndex = 2;
             MonthAgoButton.TabStop = true;
             MonthAgoButton.Text = "Month ago";
             MonthAgoButton.UseVisualStyleBackColor = true;
@@ -290,7 +300,7 @@
             DaysAgoButton.Location = new Point(3, 3);
             DaysAgoButton.Name = "DaysAgoButton";
             DaysAgoButton.Size = new Size(73, 19);
-            DaysAgoButton.TabIndex = 0;
+            DaysAgoButton.TabIndex = 1;
             DaysAgoButton.TabStop = true;
             DaysAgoButton.Text = "Days ago";
             DaysAgoButton.UseVisualStyleBackColor = true;
@@ -301,7 +311,7 @@
             AgoGroupBox.Location = new Point(12, 42);
             AgoGroupBox.Name = "AgoGroupBox";
             AgoGroupBox.Size = new Size(200, 52);
-            AgoGroupBox.TabIndex = 0;
+            AgoGroupBox.TabIndex = 2;
             AgoGroupBox.TabStop = false;
             AgoGroupBox.Text = "Ago";
             // 
@@ -310,7 +320,7 @@
             AgoNumericUpDown.Location = new Point(6, 22);
             AgoNumericUpDown.Name = "AgoNumericUpDown";
             AgoNumericUpDown.Size = new Size(188, 23);
-            AgoNumericUpDown.TabIndex = 0;
+            AgoNumericUpDown.TabIndex = 5;
             // 
             // menuStrip1
             // 
@@ -323,7 +333,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, loadToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -333,23 +343,15 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            saveToolStripMenuItem.Size = new Size(180, 22);
+            saveToolStripMenuItem.Size = new Size(143, 22);
             saveToolStripMenuItem.Text = "Save";
-            // 
-            // loadToolStripMenuItem
-            // 
-            loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
-            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            loadToolStripMenuItem.Size = new Size(180, 22);
-            loadToolStripMenuItem.Text = "Load";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(143, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -365,7 +367,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 645);
+            ClientSize = new Size(453, 444);
             Controls.Add(menuStrip1);
             Controls.Add(panel1);
             Controls.Add(ItemsListView);
@@ -396,7 +398,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
-        private ToolStripMenuItem loadToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private GroupBox AgoGroupBox;
@@ -419,5 +420,6 @@
         private Label label_InGenenalSum;
         private Label label_SpendingSum;
         private Label label_IncomeSum;
+        private Button ResetButton;
     }
 }

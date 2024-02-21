@@ -61,7 +61,7 @@
             ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
             ItemsListView.Location = new Point(0, 24);
             ItemsListView.Name = "ItemsListView";
-            ItemsListView.Size = new Size(453, 538);
+            ItemsListView.Size = new Size(453, 367);
             ItemsListView.TabIndex = 8;
             ItemsListView.UseCompatibleStateImageBehavior = false;
             ItemsListView.View = View.Details;
@@ -102,7 +102,7 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            saveToolStripMenuItem.Size = new Size(180, 22);
+            saveToolStripMenuItem.Size = new Size(143, 22);
             saveToolStripMenuItem.Text = "Save";
             // 
             // loadToolStripMenuItem
@@ -110,7 +110,7 @@
             loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            loadToolStripMenuItem.Size = new Size(180, 22);
+            loadToolStripMenuItem.Size = new Size(143, 22);
             loadToolStripMenuItem.Text = "Load";
             // 
             // exitToolStripMenuItem
@@ -118,7 +118,7 @@
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(143, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -134,15 +134,16 @@
             addToolStripMenuItem.Image = Properties.Resources._352006_add_ic_outline_circle;
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
-            addToolStripMenuItem.Size = new Size(141, 22);
+            addToolStripMenuItem.Size = new Size(180, 22);
             addToolStripMenuItem.Text = "Add";
+            addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // removeToolStripMenuItem
             // 
             removeToolStripMenuItem.Image = Properties.Resources._352442_remove_outline_ic_circle;
             removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             removeToolStripMenuItem.ShortcutKeyDisplayString = "Del";
-            removeToolStripMenuItem.Size = new Size(141, 22);
+            removeToolStripMenuItem.Size = new Size(180, 22);
             removeToolStripMenuItem.Text = "Remove";
             // 
             // viewToolStripMenuItem1
@@ -150,7 +151,7 @@
             viewToolStripMenuItem1.Image = Properties.Resources._352202_view_day_ic;
             viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
             viewToolStripMenuItem1.ShortcutKeyDisplayString = "Enter";
-            viewToolStripMenuItem1.Size = new Size(141, 22);
+            viewToolStripMenuItem1.Size = new Size(180, 22);
             viewToolStripMenuItem1.Text = "View";
             // 
             // viewToolStripMenuItem
@@ -234,7 +235,7 @@
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(0, 563);
+            panel1.Location = new Point(0, 397);
             panel1.Name = "panel1";
             panel1.Size = new Size(453, 44);
             panel1.TabIndex = 12;
@@ -243,7 +244,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 607);
+            ClientSize = new Size(453, 444);
             Controls.Add(panel1);
             Controls.Add(ItemsListView);
             Controls.Add(menuStrip1);
