@@ -121,7 +121,8 @@
     <value>--To close this window press Alt+F4--
 
 
-Ctrl+S --- Save
+Ctrl+S --- Save As
+Ctrl+Shift+S --- Save
 Ctrl+O --- Open(Load)
 Alt+F4 --- Exit
 Ctrl+A --- Add
