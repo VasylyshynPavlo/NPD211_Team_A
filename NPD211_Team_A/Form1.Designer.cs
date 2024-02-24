@@ -51,8 +51,8 @@
             yearToolStripMenuItem = new ToolStripMenuItem();
             customToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
-            label1 = new Label();
-            label2 = new Label();
+            BalanceLbl = new Label();
+            BalanceSumLbl = new Label();
             panel1 = new Panel();
             pathLable = new Label();
             menuStrip1.SuspendLayout();
@@ -107,7 +107,7 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "";
-            saveToolStripMenuItem.Size = new Size(180, 22);
+            saveToolStripMenuItem.Size = new Size(143, 22);
             saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
@@ -129,7 +129,7 @@
             // autosaveToolStripMenuItem
             // 
             autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
-            autosaveToolStripMenuItem.Size = new Size(180, 22);
+            autosaveToolStripMenuItem.Size = new Size(143, 22);
             autosaveToolStripMenuItem.Text = "Autosave";
             autosaveToolStripMenuItem.Click += autosaveToolStripMenuItem_Click;
             // 
@@ -138,7 +138,7 @@
             loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            loadToolStripMenuItem.Size = new Size(180, 22);
+            loadToolStripMenuItem.Size = new Size(143, 22);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
@@ -147,7 +147,7 @@
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(143, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -174,6 +174,7 @@
             removeToolStripMenuItem.ShortcutKeyDisplayString = "Del";
             removeToolStripMenuItem.Size = new Size(141, 22);
             removeToolStripMenuItem.Text = "Remove";
+            removeToolStripMenuItem.Click += removeToolStripMenuItem_Click;
             // 
             // viewToolStripMenuItem1
             // 
@@ -182,6 +183,7 @@
             viewToolStripMenuItem1.ShortcutKeyDisplayString = "Enter";
             viewToolStripMenuItem1.Size = new Size(141, 22);
             viewToolStripMenuItem1.Text = "View";
+            viewToolStripMenuItem1.Click += viewToolStripMenuItem1_Click;
             // 
             // viewToolStripMenuItem
             // 
@@ -239,31 +241,31 @@
             helpToolStripMenuItem.Text = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
-            // label1
+            // BalanceLbl
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(3, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 25);
-            label1.TabIndex = 10;
-            label1.Text = "Balance:";
+            BalanceLbl.AutoSize = true;
+            BalanceLbl.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            BalanceLbl.Location = new Point(3, 9);
+            BalanceLbl.Name = "BalanceLbl";
+            BalanceLbl.Size = new Size(82, 25);
+            BalanceLbl.TabIndex = 10;
+            BalanceLbl.Text = "Balance:";
             // 
-            // label2
+            // BalanceSumLbl
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(91, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(22, 25);
-            label2.TabIndex = 11;
-            label2.Text = "0";
+            BalanceSumLbl.AutoSize = true;
+            BalanceSumLbl.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            BalanceSumLbl.Location = new Point(91, 9);
+            BalanceSumLbl.Name = "BalanceSumLbl";
+            BalanceSumLbl.Size = new Size(22, 25);
+            BalanceSumLbl.TabIndex = 11;
+            BalanceSumLbl.Text = "0";
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(BalanceLbl);
+            panel1.Controls.Add(BalanceSumLbl);
             panel1.Location = new Point(0, 393);
             panel1.Name = "panel1";
             panel1.Size = new Size(453, 44);
@@ -320,8 +322,8 @@
         private ToolStripMenuItem monthToolStripMenuItem;
         private ToolStripMenuItem yearToolStripMenuItem;
         private ToolStripMenuItem customToolStripMenuItem;
-        private Label label1;
-        private Label label2;
+        private Label BalanceLbl;
+        private Label BalanceSumLbl;
         private Panel panel1;
         private ToolStripMenuItem saveToolStripMenuItem1;
         private ToolStripMenuItem saveAsToolStripMenuItem;

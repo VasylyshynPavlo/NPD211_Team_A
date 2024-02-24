@@ -2,6 +2,7 @@ using System.Data.Common;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace NPD211_Team_A
@@ -12,6 +13,7 @@ namespace NPD211_Team_A
         bool autosave = false;
 
         private List<MoneyEntry> moneyEntryList = new List<MoneyEntry>();
+        public List<string> Categories { get; set; } = new List<string>();
 
         public class MoneyEntry
         {
@@ -80,7 +82,15 @@ namespace NPD211_Team_A
             {
                 Add();
             }
+            if (e.KeyCode == Keys.Delete && !e.Alt && !e.Control && !e.Shift) //Delete
+            {
+                Delete();
+            }
             //view
+            if (e.KeyCode == Keys.Enter && !e.Alt && !e.Control && !e.Shift) //View selected
+            {
+                ViewSelectedItems();
+            }
             if (e.KeyCode == Keys.F1 && !e.Alt && !e.Control && !e.Shift) // day
             {
                 //code
@@ -108,17 +118,72 @@ namespace NPD211_Team_A
             Form2 form = new Form2();
             form.Show();
         }
+
+        private void CountBalance()
+        {
+            int balance = 0;
+
+            foreach (MoneyEntry i in moneyEntryList)
+            {
+                balance += i.SumEntry;
+            }
+
+            BalanceSumLbl.Text = balance.ToString();
+        }
+        public void AddToList(MoneyEntry moneyEntry)
+        {
+            moneyEntryList.Add(moneyEntry);
+            string[] row = { moneyEntry.CategoryEntry, moneyEntry.DateEntry.ToString(), moneyEntry.SumEntry.ToString() };
+            ItemsListView.Items.Add(new ListViewItem(row));
+            Autosave();
+        }
         private void Add()//For add to list
         {
-            Form3 form = new Form3();
+            Form3 form = new Form3(this);
             form.ShowDialog();
-            if (DialogResult == DialogResult.OK)
+            CountBalance();
+        }
+        private void Delete()
+        {
+            if (ItemsListView.SelectedItems.Count != 0)
             {
-                //code
+                for (int i = ItemsListView.Items.Count - 1; i >= 0; i--)
+                {
+                    if (ItemsListView.Items[i].Selected)
+                    {
+                        ItemsListView.Items[i].Remove();
+                        moneyEntryList.RemoveAt(i);
+                    }
+                }
+                MessageBox.Show("Succesfully deleted", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CountBalance();
+                Autosave();
             }
-            if (DialogResult == DialogResult.Cancel)
+        }
+        private void ViewSelectedItems()
+        {
+            if (ItemsListView.SelectedItems.Count != 0)
             {
-                //code
+                List<MoneyEntry> list = new List<MoneyEntry>();
+                for (int i = 0; i < ItemsListView.Items.Count; i++)
+                {
+                    if (ItemsListView.Items[i].Selected)
+                    {
+                        list.Add(moneyEntryList[i]);
+                    }
+                }
+                Form2 form = new Form2(list);
+                form.ShowDialog();
+            }
+        }
+        private void InitializeCategoryList()
+        {
+            foreach (MoneyEntry i in moneyEntryList)
+            {
+                if (!Categories.Contains(i.CategoryEntry))
+                {
+                    Categories.Add(i.CategoryEntry);
+                }
             }
         }
         private void Save()
@@ -219,7 +284,15 @@ namespace NPD211_Team_A
                     return;
                 }
                 moneyEntryList.Clear();
+                ItemsListView.Items.Clear();
                 moneyEntryList = entries;
+                InitializeCategoryList();
+                foreach (MoneyEntry moneyEntry in moneyEntryList)
+                {
+                    string[] row = { moneyEntry.CategoryEntry, moneyEntry.DateEntry.ToString(), moneyEntry.SumEntry.ToString() };
+                    ItemsListView.Items.Add(new ListViewItem(row));
+                }
+                CountBalance();
                 nowOpenedFile = dialog.FileName;
                 pathLable.Text = nowOpenedFile;
             }
@@ -253,6 +326,14 @@ namespace NPD211_Team_A
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Add();
+        }
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+        private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ViewSelectedItems();
         }
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {

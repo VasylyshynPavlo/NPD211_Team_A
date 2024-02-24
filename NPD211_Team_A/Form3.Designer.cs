@@ -33,7 +33,7 @@ namespace NPD211_Team_A
         private void InitializeComponent()
         {
             CategoryLbl = new Label();
-            comboBox1 = new ComboBox();
+            CategoryCB = new ComboBox();
             DateLbl = new Label();
             DateDTP = new DateTimePicker();
             SumLbl = new Label();
@@ -53,32 +53,29 @@ namespace NPD211_Team_A
             // 
             CategoryLbl.AutoSize = true;
             CategoryLbl.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            CategoryLbl.Location = new Point(17, 65);
-            CategoryLbl.Margin = new Padding(4, 0, 4, 0);
+            CategoryLbl.Location = new Point(12, 39);
             CategoryLbl.Name = "CategoryLbl";
-            CategoryLbl.Size = new Size(84, 25);
+            CategoryLbl.Size = new Size(55, 15);
             CategoryLbl.TabIndex = 0;
             CategoryLbl.Text = "Category";
             // 
-            // comboBox1
+            // CategoryCB
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(110, 60);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(241, 33);
-            comboBox1.TabIndex = 1;
+            CategoryCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            CategoryCB.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            CategoryCB.FormattingEnabled = true;
+            CategoryCB.Location = new Point(77, 36);
+            CategoryCB.Name = "CategoryCB";
+            CategoryCB.Size = new Size(170, 23);
+            CategoryCB.TabIndex = 1;
             // 
             // DateLbl
             // 
             DateLbl.AutoSize = true;
             DateLbl.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            DateLbl.Location = new Point(17, 115);
-            DateLbl.Margin = new Padding(4, 0, 4, 0);
+            DateLbl.Location = new Point(12, 69);
             DateLbl.Name = "DateLbl";
-            DateLbl.Size = new Size(49, 25);
+            DateLbl.Size = new Size(31, 15);
             DateLbl.TabIndex = 0;
             DateLbl.Text = "Date";
             // 
@@ -87,73 +84,68 @@ namespace NPD211_Team_A
             DateDTP.CustomFormat = "dd.MM.yyyy";
             DateDTP.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             DateDTP.Format = DateTimePickerFormat.Custom;
-            DateDTP.Location = new Point(110, 108);
-            DateDTP.Margin = new Padding(4, 5, 4, 5);
+            DateDTP.Location = new Point(77, 65);
             DateDTP.Name = "DateDTP";
-            DateDTP.Size = new Size(241, 31);
+            DateDTP.Size = new Size(170, 23);
             DateDTP.TabIndex = 2;
             // 
             // SumLbl
             // 
             SumLbl.AutoSize = true;
             SumLbl.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SumLbl.Location = new Point(17, 162);
-            SumLbl.Margin = new Padding(4, 0, 4, 0);
+            SumLbl.Location = new Point(12, 97);
             SumLbl.Name = "SumLbl";
-            SumLbl.Size = new Size(48, 25);
+            SumLbl.Size = new Size(31, 15);
             SumLbl.TabIndex = 0;
             SumLbl.Text = "Sum";
             // 
             // SumTB
             // 
             SumTB.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SumTB.Location = new Point(110, 157);
-            SumTB.Margin = new Padding(4, 5, 4, 5);
+            SumTB.Location = new Point(77, 94);
             SumTB.Name = "SumTB";
-            SumTB.Size = new Size(241, 31);
+            SumTB.Size = new Size(170, 23);
             SumTB.TabIndex = 3;
             // 
             // AddCategoryTB
             // 
             AddCategoryTB.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            AddCategoryTB.Location = new Point(9, 37);
-            AddCategoryTB.Margin = new Padding(4, 5, 4, 5);
+            AddCategoryTB.Location = new Point(6, 22);
             AddCategoryTB.Name = "AddCategoryTB";
-            AddCategoryTB.Size = new Size(241, 31);
+            AddCategoryTB.Size = new Size(170, 23);
             AddCategoryTB.TabIndex = 3;
             // 
             // AddCategoryBtn
             // 
             AddCategoryBtn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            AddCategoryBtn.Location = new Point(336, 35);
-            AddCategoryBtn.Margin = new Padding(4, 5, 4, 5);
+            AddCategoryBtn.Location = new Point(235, 21);
             AddCategoryBtn.Name = "AddCategoryBtn";
-            AddCategoryBtn.Size = new Size(104, 38);
+            AddCategoryBtn.Size = new Size(73, 23);
             AddCategoryBtn.TabIndex = 4;
             AddCategoryBtn.Text = "Add";
             AddCategoryBtn.UseVisualStyleBackColor = true;
+            AddCategoryBtn.Click += AddCategoryBtn_Click;
             // 
             // AddBtn
             // 
             AddBtn.DialogResult = DialogResult.OK;
             AddBtn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            AddBtn.Location = new Point(361, 60);
-            AddBtn.Margin = new Padding(4, 5, 4, 5);
+            AddBtn.Location = new Point(253, 36);
             AddBtn.Name = "AddBtn";
-            AddBtn.Size = new Size(104, 38);
+            AddBtn.Size = new Size(73, 23);
             AddBtn.TabIndex = 4;
             AddBtn.Text = "Add";
             AddBtn.UseVisualStyleBackColor = true;
+            AddBtn.Click += AddBtn_Click;
             // 
             // CancelBtn
             // 
             CancelBtn.DialogResult = DialogResult.Cancel;
             CancelBtn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            CancelBtn.Location = new Point(361, 108);
-            CancelBtn.Margin = new Padding(4, 5, 4, 5);
+            CancelBtn.Location = new Point(253, 65);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.RightToLeft = RightToLeft.No;
-            CancelBtn.Size = new Size(104, 38);
+            CancelBtn.Size = new Size(73, 23);
             CancelBtn.TabIndex = 4;
             CancelBtn.Text = "Cancel";
             CancelBtn.UseVisualStyleBackColor = true;
@@ -164,8 +156,7 @@ namespace NPD211_Team_A
             menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(9, 3, 0, 3);
-            menuStrip1.Size = new Size(483, 35);
+            menuStrip1.Size = new Size(338, 32);
             menuStrip1.TabIndex = 12;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -173,7 +164,7 @@ namespace NPD211_Team_A
             // 
             helpToolStripMenuItem.Image = Properties.Resources._352423_ic_help;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(89, 29);
+            helpToolStripMenuItem.Size = new Size(68, 28);
             helpToolStripMenuItem.Text = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
@@ -181,31 +172,28 @@ namespace NPD211_Team_A
             // 
             groupBox1.Controls.Add(AddCategoryTB);
             groupBox1.Controls.Add(AddCategoryBtn);
-            groupBox1.Location = new Point(17, 205);
-            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Location = new Point(12, 123);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 5, 4, 5);
-            groupBox1.Size = new Size(449, 92);
+            groupBox1.Size = new Size(314, 55);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Add new category";
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(483, 312);
+            ClientSize = new Size(338, 187);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             Controls.Add(CancelBtn);
             Controls.Add(AddBtn);
             Controls.Add(SumTB);
             Controls.Add(DateDTP);
-            Controls.Add(comboBox1);
+            Controls.Add(CategoryCB);
             Controls.Add(SumLbl);
             Controls.Add(DateLbl);
             Controls.Add(CategoryLbl);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Form3";
             Text = "Додати";
             menuStrip1.ResumeLayout(false);
@@ -219,7 +207,7 @@ namespace NPD211_Team_A
         #endregion
 
         private Label CategoryLbl;
-        private ComboBox comboBox1;
+        private ComboBox CategoryCB;
         private Label DateLbl;
         private DateTimePicker DateDTP;
         private Label SumLbl;
