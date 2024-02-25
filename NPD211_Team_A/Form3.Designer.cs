@@ -152,11 +152,10 @@ namespace NPD211_Team_A
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(338, 32);
+            menuStrip1.Size = new Size(338, 24);
             menuStrip1.TabIndex = 12;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -164,7 +163,7 @@ namespace NPD211_Team_A
             // 
             helpToolStripMenuItem.Image = Properties.Resources._352423_ic_help;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(68, 28);
+            helpToolStripMenuItem.Size = new Size(60, 20);
             helpToolStripMenuItem.Text = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
@@ -195,7 +194,7 @@ namespace NPD211_Team_A
             Controls.Add(DateLbl);
             Controls.Add(CategoryLbl);
             Name = "Form3";
-            Text = "Додати";
+            Text = "Add";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
