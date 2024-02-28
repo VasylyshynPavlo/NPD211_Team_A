@@ -43,17 +43,17 @@ namespace NPD211_Team_A
 
         private void dayToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            form2_Open();
+            ViewLastDay();
         }
 
         private void monthToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form2_Open();
+            ViewLastMonth();
         }
 
         private void yearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form2_Open();
+            ViewLastYear();
         }
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,18 +93,15 @@ namespace NPD211_Team_A
             }
             if (e.KeyCode == Keys.F1 && !e.Alt && !e.Control && !e.Shift) // day
             {
-                //code
-                form2_Open();
+                ViewLastDay();
             }
             if (e.KeyCode == Keys.F2 && !e.Alt && !e.Control && !e.Shift) //month
             {
-                //code
-                form2_Open();
+                ViewLastMonth();
             }
             if (e.KeyCode == Keys.F3 && !e.Alt && !e.Control && !e.Shift) //year
             {
-                //code
-                form2_Open();
+                ViewLastYear();
             }
             if (e.KeyCode == Keys.F4 && !e.Alt && !e.Control && !e.Shift) //custom
             {
@@ -168,6 +165,56 @@ namespace NPD211_Team_A
                 for (int i = 0; i < ItemsListView.Items.Count; i++)
                 {
                     if (ItemsListView.Items[i].Selected)
+                    {
+                        list.Add(moneyEntryList[i]);
+                    }
+                }
+                Form2 form = new Form2(list);
+                form.ShowDialog();
+            }
+        }
+        private void ViewLastDay()
+        {
+            if (ItemsListView.Items.Count != 0)
+            {
+                List<MoneyEntry> list = new List<MoneyEntry>();
+                for (int i = 0; i < ItemsListView.Items.Count; i++)
+                {
+                    if (moneyEntryList[i].DateEntry.Day == DateTime.UtcNow.Day && moneyEntryList[i].DateEntry.Month == DateTime.UtcNow.Month && moneyEntryList[i].DateEntry.Year == DateTime.UtcNow.Year)
+                    {
+                        list.Add(moneyEntryList[i]);
+                    }
+                }
+                Form2 form = new Form2(list);
+                form.ShowDialog();
+            }
+        }
+        private void ViewLastMonth()
+        {
+            if (ItemsListView.Items.Count != 0)
+            {
+                List<MoneyEntry> list = new List<MoneyEntry>();
+                for (int i = 0; i < ItemsListView.Items.Count; i++)
+                {
+                    if (((DateTime.UtcNow.Year * 365 + DateTime.UtcNow.Month * 31 + DateTime.UtcNow.Day) -
+                        (moneyEntryList[i].DateEntry.Year * 365 + moneyEntryList[i].DateEntry.Month * 31 + moneyEntryList[i].DateEntry.Day)) <= 31)
+                    {
+                        list.Add(moneyEntryList[i]);
+                    }
+                }
+                Form2 form = new Form2(list);
+                form.ShowDialog();
+            }
+        }
+        private void ViewLastYear()
+        {
+            if (ItemsListView.Items.Count != 0)
+            {
+                List<MoneyEntry> list = new List<MoneyEntry>();
+                for (int i = 0; i < ItemsListView.Items.Count; i++)
+                {
+                    if (((DateTime.UtcNow.Year * 365 + DateTime.UtcNow.Month * 31 + DateTime.UtcNow.Day) -
+                        (moneyEntryList[i].DateEntry.Year * 365 + moneyEntryList[i].DateEntry.Month * 31 + moneyEntryList[i].DateEntry.Day)) <= 365)
                     {
                         list.Add(moneyEntryList[i]);
                     }
