@@ -110,11 +110,6 @@ namespace NPD211_Team_A
                 form.Show();
             }
         }
-        private void form2_Open() //when we add list, change to form1_Open(List<T> list) AND delete this message
-        {
-            Form2 form = new Form2();
-            form.Show();
-        }
 
         private void CountBalance()
         {
