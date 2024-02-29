@@ -14,10 +14,6 @@ namespace NPD211_Team_A
     {
         List<Form1.MoneyEntry> SelectedMoneyEntries = new List<Form1.MoneyEntry>();
 
-        public Form2()
-        {
-            InitializeComponent();
-        }
         public Form2(List<Form1.MoneyEntry> selectedMoneyEntries)
         {
             InitializeComponent();
