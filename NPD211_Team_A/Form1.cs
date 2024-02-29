@@ -58,22 +58,22 @@ namespace NPD211_Team_A
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form4 form = new Form4();
+            Form4 form = new Form4(moneyEntryList);
             form.Show();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)//hotkeys
         {
             //file
-            if (e.KeyCode == Keys.S && !e.Alt && e.Control && e.Shift) //Add
+            if (e.KeyCode == Keys.S && !e.Alt && e.Control && e.Shift)
             {
                 SaveAs();
             }
-            if (e.KeyCode == Keys.S && !e.Alt && e.Control && !e.Shift) //Add
+            if (e.KeyCode == Keys.S && !e.Alt && e.Control && !e.Shift)
             {
                 Save();
             }
-            if (e.KeyCode == Keys.O && !e.Alt && e.Control && !e.Shift) //Add
+            if (e.KeyCode == Keys.O && !e.Alt && e.Control && !e.Shift)
             {
                 Load();
             }
@@ -106,14 +106,9 @@ namespace NPD211_Team_A
             if (e.KeyCode == Keys.F4 && !e.Alt && !e.Control && !e.Shift) //custom
             {
                 //code
-                Form4 form = new Form4();
+                Form4 form = new Form4(moneyEntryList);
                 form.Show();
             }
-        }
-        private void form2_Open() //when we add list, change to form1_Open(List<T> list) AND delete this message
-        {
-            Form2 form = new Form2();
-            form.Show();
         }
 
         private void CountBalance()
@@ -265,14 +260,14 @@ namespace NPD211_Team_A
                     InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                     Filter = "Text Files|*.txt",
                     FilterIndex = 1,
-                    FileName = "All " + DateTime.Now.Hour.ToString() + "h " + DateTime.Now.Minute.ToString() + "mi " + DateTime.Now.Day.ToString() + "d" + DateTime.Now.Month.ToString() + "m" + DateTime.Now.Year.ToString() + "y"
+                    FileName = "All " + DateTime.Now.Hour.ToString() + "_" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString()
                 };
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
 
                     if (dialog.FileName == "")
                     {
-                        dialog.FileName = "All_" + DateTime.Now.ToShortTimeString() + "_" + DateTime.Now.ToShortDateString();
+                        dialog.FileName = "All " + DateTime.Now.Hour.ToString() + "_" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString();
                     }
                     string value = "BEGIN\n";
                     foreach (var item in moneyEntryList)

@@ -42,7 +42,7 @@
             label_Ingeneral = new Label();
             CloseButton = new Button();
             GoButton = new Button();
-            groupBox1 = new GroupBox();
+            FromToGroupBox = new GroupBox();
             ToDateTimePicker = new DateTimePicker();
             FromDateTimePicker = new DateTimePicker();
             ToTextDate = new Label();
@@ -59,8 +59,9 @@
             saveToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            SavedAs = new Label();
             panel1.SuspendLayout();
-            groupBox1.SuspendLayout();
+            FromToGroupBox.SuspendLayout();
             ChangePanel.SuspendLayout();
             AgoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AgoNumericUpDown).BeginInit();
@@ -73,7 +74,7 @@
             ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
             ItemsListView.Location = new Point(0, 27);
             ItemsListView.Name = "ItemsListView";
-            ItemsListView.Size = new Size(454, 250);
+            ItemsListView.Size = new Size(454, 240);
             ItemsListView.TabIndex = 0;
             ItemsListView.UseCompatibleStateImageBehavior = false;
             ItemsListView.View = View.Details;
@@ -105,10 +106,10 @@
             panel1.Controls.Add(label_Ingeneral);
             panel1.Controls.Add(CloseButton);
             panel1.Controls.Add(GoButton);
-            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(FromToGroupBox);
             panel1.Controls.Add(ChangePanel);
             panel1.Controls.Add(AgoGroupBox);
-            panel1.Location = new Point(1, 283);
+            panel1.Location = new Point(1, 273);
             panel1.Name = "panel1";
             panel1.Size = new Size(453, 161);
             panel1.TabIndex = 10;
@@ -121,6 +122,7 @@
             ResetButton.TabIndex = 7;
             ResetButton.Text = "Reset";
             ResetButton.UseVisualStyleBackColor = true;
+            ResetButton.Click += ResetButton_Click;
             // 
             // label_InGenenalSum
             // 
@@ -200,19 +202,20 @@
             GoButton.TabIndex = 8;
             GoButton.Text = "Go";
             GoButton.UseVisualStyleBackColor = true;
+            GoButton.Click += GoButton_Click;
             // 
-            // groupBox1
+            // FromToGroupBox
             // 
-            groupBox1.Controls.Add(ToDateTimePicker);
-            groupBox1.Controls.Add(FromDateTimePicker);
-            groupBox1.Controls.Add(ToTextDate);
-            groupBox1.Controls.Add(FromTextLable);
-            groupBox1.Location = new Point(218, 42);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(223, 84);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "From To";
+            FromToGroupBox.Controls.Add(ToDateTimePicker);
+            FromToGroupBox.Controls.Add(FromDateTimePicker);
+            FromToGroupBox.Controls.Add(ToTextDate);
+            FromToGroupBox.Controls.Add(FromTextLable);
+            FromToGroupBox.Location = new Point(218, 42);
+            FromToGroupBox.Name = "FromToGroupBox";
+            FromToGroupBox.Size = new Size(223, 84);
+            FromToGroupBox.TabIndex = 2;
+            FromToGroupBox.TabStop = false;
+            FromToGroupBox.Text = "From To";
             // 
             // ToDateTimePicker
             // 
@@ -271,6 +274,7 @@
             FromToButton.TabStop = true;
             FromToButton.Text = "From To";
             FromToButton.UseVisualStyleBackColor = true;
+            FromToButton.CheckedChanged += FromToButton_CheckedChanged;
             // 
             // YearsAgoButton
             // 
@@ -282,6 +286,7 @@
             YearsAgoButton.TabStop = true;
             YearsAgoButton.Text = "Years ago";
             YearsAgoButton.UseVisualStyleBackColor = true;
+            YearsAgoButton.CheckedChanged += YearsAgoButton_CheckedChanged;
             // 
             // MonthAgoButton
             // 
@@ -293,6 +298,7 @@
             MonthAgoButton.TabStop = true;
             MonthAgoButton.Text = "Month ago";
             MonthAgoButton.UseVisualStyleBackColor = true;
+            MonthAgoButton.CheckedChanged += MonthAgoButton_CheckedChanged;
             // 
             // DaysAgoButton
             // 
@@ -304,6 +310,7 @@
             DaysAgoButton.TabStop = true;
             DaysAgoButton.Text = "Days ago";
             DaysAgoButton.UseVisualStyleBackColor = true;
+            DaysAgoButton.CheckedChanged += DaysAgoButton_CheckedChanged;
             // 
             // AgoGroupBox
             // 
@@ -318,6 +325,7 @@
             // AgoNumericUpDown
             // 
             AgoNumericUpDown.Location = new Point(6, 22);
+            AgoNumericUpDown.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
             AgoNumericUpDown.Name = "AgoNumericUpDown";
             AgoNumericUpDown.Size = new Size(188, 23);
             AgoNumericUpDown.TabIndex = 5;
@@ -343,15 +351,16 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
-            saveToolStripMenuItem.Size = new Size(143, 22);
+            saveToolStripMenuItem.Size = new Size(138, 22);
             saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(143, 22);
+            exitToolStripMenuItem.Size = new Size(138, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -363,11 +372,20 @@
             helpToolStripMenuItem.Text = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
+            // SavedAs
+            // 
+            SavedAs.AutoSize = true;
+            SavedAs.Location = new Point(3, 427);
+            SavedAs.Name = "SavedAs";
+            SavedAs.Size = new Size(0, 15);
+            SavedAs.TabIndex = 12;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 444);
+            ClientSize = new Size(453, 446);
+            Controls.Add(SavedAs);
             Controls.Add(menuStrip1);
             Controls.Add(panel1);
             Controls.Add(ItemsListView);
@@ -376,8 +394,8 @@
             KeyDown += Form4_KeyDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            FromToGroupBox.ResumeLayout(false);
+            FromToGroupBox.PerformLayout();
             ChangePanel.ResumeLayout(false);
             ChangePanel.PerformLayout();
             AgoGroupBox.ResumeLayout(false);
@@ -407,7 +425,7 @@
         private RadioButton MonthAgoButton;
         private RadioButton DaysAgoButton;
         private NumericUpDown AgoNumericUpDown;
-        private GroupBox groupBox1;
+        private GroupBox FromToGroupBox;
         private DateTimePicker ToDateTimePicker;
         private DateTimePicker FromDateTimePicker;
         private Label ToTextDate;
@@ -421,5 +439,6 @@
         private Label label_SpendingSum;
         private Label label_IncomeSum;
         private Button ResetButton;
+        private Label SavedAs;
     }
 }

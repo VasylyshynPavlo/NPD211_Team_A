@@ -14,11 +14,6 @@ namespace NPD211_Team_A
     {
         Form1 form1;
 
-        public Form3()
-        {
-            InitializeComponent();
-        }
-
         public Form3(Form1 form1)
         {
             InitializeComponent();
