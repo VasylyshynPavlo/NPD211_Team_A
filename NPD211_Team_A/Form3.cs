@@ -18,6 +18,11 @@ namespace NPD211_Team_A
         {
             InitializeComponent();
 
+            if (form1.Categories.Count == 0)
+            {
+                form1.Categories.AddRange(new string[] { "Salary", "Food", "Transport" });
+            }
+
             this.form1 = form1;
             UpdateCategoryCB();
         }
