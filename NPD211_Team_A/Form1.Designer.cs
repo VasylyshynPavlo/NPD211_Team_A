@@ -63,9 +63,10 @@
             // 
             ItemsListView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
-            ItemsListView.Location = new Point(0, 24);
+            ItemsListView.Location = new Point(0, 40);
+            ItemsListView.Margin = new Padding(4, 5, 4, 5);
             ItemsListView.Name = "ItemsListView";
-            ItemsListView.Size = new Size(453, 363);
+            ItemsListView.Size = new Size(645, 602);
             ItemsListView.TabIndex = 8;
             ItemsListView.UseCompatibleStateImageBehavior = false;
             ItemsListView.View = View.Details;
@@ -87,10 +88,12 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, viewToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(453, 24);
+            menuStrip1.Padding = new Padding(9, 3, 0, 3);
+            menuStrip1.Size = new Size(647, 35);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +101,7 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, autosaveToolStripMenuItem, loadToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(54, 29);
             fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
@@ -107,14 +110,14 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "";
-            saveToolStripMenuItem.Size = new Size(143, 22);
+            saveToolStripMenuItem.Size = new Size(218, 34);
             saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
             // 
             saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             saveToolStripMenuItem1.ShortcutKeyDisplayString = "Ctrl+S";
-            saveToolStripMenuItem1.Size = new Size(184, 22);
+            saveToolStripMenuItem1.Size = new Size(282, 34);
             saveToolStripMenuItem1.Text = "Save";
             saveToolStripMenuItem1.Click += saveToolStripMenuItem_Click;
             // 
@@ -122,14 +125,14 @@
             // 
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             saveAsToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+S";
-            saveAsToolStripMenuItem.Size = new Size(184, 22);
+            saveAsToolStripMenuItem.Size = new Size(282, 34);
             saveAsToolStripMenuItem.Text = "Save as";
             saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // autosaveToolStripMenuItem
             // 
             autosaveToolStripMenuItem.Name = "autosaveToolStripMenuItem";
-            autosaveToolStripMenuItem.Size = new Size(143, 22);
+            autosaveToolStripMenuItem.Size = new Size(218, 34);
             autosaveToolStripMenuItem.Text = "Autosave";
             autosaveToolStripMenuItem.Click += autosaveToolStripMenuItem_Click;
             // 
@@ -138,7 +141,7 @@
             loadToolStripMenuItem.Image = Properties.Resources._1564526_add_arrow_download_save_guardar_icon;
             loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             loadToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+O";
-            loadToolStripMenuItem.Size = new Size(143, 22);
+            loadToolStripMenuItem.Size = new Size(218, 34);
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
@@ -147,7 +150,7 @@
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(143, 22);
+            exitToolStripMenuItem.Size = new Size(218, 34);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -155,7 +158,7 @@
             // 
             editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addToolStripMenuItem, removeToolStripMenuItem, viewToolStripMenuItem1 });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(39, 20);
+            editToolStripMenuItem.Size = new Size(58, 29);
             editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
@@ -163,7 +166,7 @@
             addToolStripMenuItem.Image = Properties.Resources._352006_add_ic_outline_circle;
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
-            addToolStripMenuItem.Size = new Size(141, 22);
+            addToolStripMenuItem.Size = new Size(216, 34);
             addToolStripMenuItem.Text = "Add";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
@@ -172,7 +175,7 @@
             removeToolStripMenuItem.Image = Properties.Resources._352442_remove_outline_ic_circle;
             removeToolStripMenuItem.Name = "removeToolStripMenuItem";
             removeToolStripMenuItem.ShortcutKeyDisplayString = "Del";
-            removeToolStripMenuItem.Size = new Size(141, 22);
+            removeToolStripMenuItem.Size = new Size(216, 34);
             removeToolStripMenuItem.Text = "Remove";
             removeToolStripMenuItem.Click += removeToolStripMenuItem_Click;
             // 
@@ -181,7 +184,7 @@
             viewToolStripMenuItem1.Image = Properties.Resources._352202_view_day_ic;
             viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
             viewToolStripMenuItem1.ShortcutKeyDisplayString = "Enter";
-            viewToolStripMenuItem1.Size = new Size(141, 22);
+            viewToolStripMenuItem1.Size = new Size(216, 34);
             viewToolStripMenuItem1.Text = "View";
             viewToolStripMenuItem1.Click += viewToolStripMenuItem1_Click;
             // 
@@ -189,7 +192,7 @@
             // 
             viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dayToolStripMenuItem });
             viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            viewToolStripMenuItem.Size = new Size(44, 20);
+            viewToolStripMenuItem.Size = new Size(65, 29);
             viewToolStripMenuItem.Text = "View";
             // 
             // dayToolStripMenuItem
@@ -197,14 +200,14 @@
             dayToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dayToolStripMenuItem1, monthToolStripMenuItem, yearToolStripMenuItem, customToolStripMenuItem });
             dayToolStripMenuItem.Image = Properties.Resources._352202_view_day_ic;
             dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-            dayToolStripMenuItem.Size = new Size(124, 22);
+            dayToolStripMenuItem.Size = new Size(190, 34);
             dayToolStripMenuItem.Text = "Show last";
             // 
             // dayToolStripMenuItem1
             // 
             dayToolStripMenuItem1.Name = "dayToolStripMenuItem1";
             dayToolStripMenuItem1.ShortcutKeyDisplayString = "F1";
-            dayToolStripMenuItem1.Size = new Size(135, 22);
+            dayToolStripMenuItem1.Size = new Size(207, 34);
             dayToolStripMenuItem1.Text = "Day";
             dayToolStripMenuItem1.Click += dayToolStripMenuItem1_Click;
             // 
@@ -212,7 +215,7 @@
             // 
             monthToolStripMenuItem.Name = "monthToolStripMenuItem";
             monthToolStripMenuItem.ShortcutKeyDisplayString = "F2";
-            monthToolStripMenuItem.Size = new Size(135, 22);
+            monthToolStripMenuItem.Size = new Size(207, 34);
             monthToolStripMenuItem.Text = "Month";
             monthToolStripMenuItem.Click += monthToolStripMenuItem_Click;
             // 
@@ -220,7 +223,7 @@
             // 
             yearToolStripMenuItem.Name = "yearToolStripMenuItem";
             yearToolStripMenuItem.ShortcutKeyDisplayString = "F3";
-            yearToolStripMenuItem.Size = new Size(135, 22);
+            yearToolStripMenuItem.Size = new Size(207, 34);
             yearToolStripMenuItem.Text = "Year";
             yearToolStripMenuItem.Click += yearToolStripMenuItem_Click;
             // 
@@ -229,7 +232,7 @@
             customToolStripMenuItem.Image = Properties.Resources._352548_ic_more_three_dots_dots_horiz;
             customToolStripMenuItem.Name = "customToolStripMenuItem";
             customToolStripMenuItem.ShortcutKeyDisplayString = "F4";
-            customToolStripMenuItem.Size = new Size(135, 22);
+            customToolStripMenuItem.Size = new Size(207, 34);
             customToolStripMenuItem.Text = "Custom";
             customToolStripMenuItem.Click += customToolStripMenuItem_Click;
             // 
@@ -237,7 +240,7 @@
             // 
             helpToolStripMenuItem.Image = Properties.Resources._352423_ic_help;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(60, 20);
+            helpToolStripMenuItem.Size = new Size(89, 29);
             helpToolStripMenuItem.Text = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
@@ -245,9 +248,10 @@
             // 
             BalanceLbl.AutoSize = true;
             BalanceLbl.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            BalanceLbl.Location = new Point(3, 9);
+            BalanceLbl.Location = new Point(4, 15);
+            BalanceLbl.Margin = new Padding(4, 0, 4, 0);
             BalanceLbl.Name = "BalanceLbl";
-            BalanceLbl.Size = new Size(82, 25);
+            BalanceLbl.Size = new Size(118, 38);
             BalanceLbl.TabIndex = 10;
             BalanceLbl.Text = "Balance:";
             // 
@@ -255,9 +259,10 @@
             // 
             BalanceSumLbl.AutoSize = true;
             BalanceSumLbl.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            BalanceSumLbl.Location = new Point(91, 9);
+            BalanceSumLbl.Location = new Point(130, 15);
+            BalanceSumLbl.Margin = new Padding(4, 0, 4, 0);
             BalanceSumLbl.Name = "BalanceSumLbl";
-            BalanceSumLbl.Size = new Size(22, 25);
+            BalanceSumLbl.Size = new Size(32, 38);
             BalanceSumLbl.TabIndex = 11;
             BalanceSumLbl.Text = "0";
             // 
@@ -266,32 +271,35 @@
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(BalanceLbl);
             panel1.Controls.Add(BalanceSumLbl);
-            panel1.Location = new Point(0, 393);
+            panel1.Location = new Point(0, 655);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(453, 44);
+            panel1.Size = new Size(647, 73);
             panel1.TabIndex = 12;
             // 
             // pathLable
             // 
             pathLable.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pathLable.AutoSize = true;
-            pathLable.Location = new Point(3, 433);
+            pathLable.Location = new Point(4, 722);
+            pathLable.Margin = new Padding(4, 0, 4, 0);
             pathLable.Name = "pathLable";
-            pathLable.Size = new Size(0, 15);
+            pathLable.Size = new Size(0, 25);
             pathLable.TabIndex = 13;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(453, 451);
+            ClientSize = new Size(647, 752);
             Controls.Add(pathLable);
             Controls.Add(panel1);
             Controls.Add(ItemsListView);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Finance Manager";
             KeyDown += Form1_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
