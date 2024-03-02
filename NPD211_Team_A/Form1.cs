@@ -89,7 +89,7 @@ namespace NPD211_Team_A
             //view
             if (e.KeyCode == Keys.Enter && !e.Alt && !e.Control && !e.Shift) //View selected
             {
-                ViewSelectedItems();
+                ShowMessegeBoxItem();
             }
             if (e.KeyCode == Keys.F1 && !e.Alt && !e.Control && !e.Shift) // day
             {
@@ -108,6 +108,26 @@ namespace NPD211_Team_A
                 //code
                 Form4 form = new Form4(moneyEntryList);
                 form.Show();
+            }
+        }
+
+        private void ShowMessegeBoxItem()
+        {
+            int selectedIndex = ItemsListView.SelectedIndices.Count > 0 ? ItemsListView.SelectedIndices[0] : -1;
+
+            if (selectedIndex >= 0 && selectedIndex < moneyEntryList.Count)
+            {
+                MoneyEntry selectedMoneyEntry = moneyEntryList[selectedIndex];
+
+                string message = $"Category: {selectedMoneyEntry.CategoryEntry}\n" +
+                                 $"Date: {selectedMoneyEntry.DateEntry}\n" +
+                                 $"Sum: {selectedMoneyEntry.SumEntry}";
+
+                MessageBox.Show(message, "Selected Item Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Select a money entry from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -375,7 +395,7 @@ namespace NPD211_Team_A
         }
         private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ViewSelectedItems();
+            ShowMessegeBoxItem();
         }
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
