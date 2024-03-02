@@ -185,13 +185,5 @@ namespace NPD211_Team_A
         {
             Save();
         }
-
-        private void Form4_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.S && !e.Alt && e.Control && !e.Shift)
-            {
-                Save();
-            }
-        }
     }
 }

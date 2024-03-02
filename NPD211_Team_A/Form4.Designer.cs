@@ -350,7 +350,7 @@
             // 
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
+            saveToolStripMenuItem.ShortcutKeyDisplayString = "";
             saveToolStripMenuItem.Size = new Size(138, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
@@ -391,7 +391,6 @@
             Controls.Add(ItemsListView);
             Name = "Form4";
             Text = "Form4";
-            KeyDown += Form4_KeyDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             FromToGroupBox.ResumeLayout(false);
