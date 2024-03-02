@@ -129,9 +129,10 @@
             // 
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+S";
+            saveToolStripMenuItem.ShortcutKeyDisplayString = "";
             saveToolStripMenuItem.Size = new Size(180, 22);
             saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -213,7 +214,6 @@
             Margin = new Padding(2);
             Name = "Form2";
             Text = "Form2";
-            KeyDown += Form2_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);

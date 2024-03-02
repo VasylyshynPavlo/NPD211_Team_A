@@ -30,6 +30,42 @@ namespace NPD211_Team_A
             label_General.Text = CountGeneral().ToString();
         }
 
+        public void Save()
+        {
+            if (SelectedMoneyEntries.Count != 0)
+            {
+                SaveFileDialog dialog = new()
+                {
+                    InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                    Filter = "Text Files|*.txt",
+                    FilterIndex = 1,
+                    FileName = "ViewByLastDayMonthYear " + DateTime.Now.Hour.ToString() + "_" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString()
+                };
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    if (dialog.FileName == "")
+                    {
+                        dialog.FileName = "ViewByLastDayMonthYear " + DateTime.Now.Hour.ToString() + "_" + DateTime.Now.Minute.ToString() + " " + DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString();
+                    }
+                    string value = "BEGIN\n";
+                    foreach (var it in SelectedMoneyEntries)
+                    {
+                        Form1.MoneyEntry item = it;
+                        value += item.CategoryEntry + "\n";
+                        value += item.DateEntry.ToShortDateString() + "\n";
+                        value += item.SumEntry + "\n";
+                    }
+                    value += "END";
+                    System.IO.File.WriteAllText(dialog.FileName, value);
+                }
+            }
+            else
+            {
+                MessageBox.Show($"The list is empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private int CountIncome()
         {
             int income = 0;
@@ -66,10 +102,6 @@ namespace NPD211_Team_A
         {
             this.Close();
         }
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
-        {
-            //file
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,6 +112,11 @@ namespace NPD211_Team_A
         {
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
 }
