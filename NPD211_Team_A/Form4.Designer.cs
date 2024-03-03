@@ -72,7 +72,7 @@
             // 
             ItemsListView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ItemsListView.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
-            ItemsListView.Location = new Point(0, 27);
+            ItemsListView.Location = new Point(0, 24);
             ItemsListView.Name = "ItemsListView";
             ItemsListView.Size = new Size(454, 240);
             ItemsListView.TabIndex = 0;
@@ -390,7 +390,7 @@
             Controls.Add(panel1);
             Controls.Add(ItemsListView);
             Name = "Form4";
-            Text = "Form4";
+            Text = "Custom Show";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             FromToGroupBox.ResumeLayout(false);
