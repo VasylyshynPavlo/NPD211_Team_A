@@ -155,7 +155,7 @@
             // 
             listView_MonthYearAlltime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView_MonthYearAlltime.Columns.AddRange(new ColumnHeader[] { Category, Date, Money });
-            listView_MonthYearAlltime.Location = new Point(0, 23);
+            listView_MonthYearAlltime.Location = new Point(0, 24);
             listView_MonthYearAlltime.Name = "listView_MonthYearAlltime";
             listView_MonthYearAlltime.Size = new Size(453, 351);
             listView_MonthYearAlltime.TabIndex = 11;
@@ -213,7 +213,7 @@
             Controls.Add(menuStrip1);
             Margin = new Padding(2);
             Name = "Form2";
-            Text = "Form2";
+            Text = "Show";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
