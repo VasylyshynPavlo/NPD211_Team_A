@@ -261,13 +261,13 @@
             ChangePanel.Controls.Add(DaysAgoButton);
             ChangePanel.Location = new Point(12, 9);
             ChangePanel.Name = "ChangePanel";
-            ChangePanel.Size = new Size(325, 27);
+            ChangePanel.Size = new Size(257, 27);
             ChangePanel.TabIndex = 1;
             // 
             // FromToButton
             // 
             FromToButton.AutoSize = true;
-            FromToButton.Location = new Point(253, 3);
+            FromToButton.Location = new Point(184, 3);
             FromToButton.Name = "FromToButton";
             FromToButton.Size = new Size(68, 19);
             FromToButton.TabIndex = 4;
@@ -279,24 +279,24 @@
             // YearsAgoButton
             // 
             YearsAgoButton.AutoSize = true;
-            YearsAgoButton.Location = new Point(172, 3);
+            YearsAgoButton.Location = new Point(126, 3);
             YearsAgoButton.Name = "YearsAgoButton";
-            YearsAgoButton.Size = new Size(75, 19);
+            YearsAgoButton.Size = new Size(52, 19);
             YearsAgoButton.TabIndex = 3;
             YearsAgoButton.TabStop = true;
-            YearsAgoButton.Text = "Years ago";
+            YearsAgoButton.Text = "Years";
             YearsAgoButton.UseVisualStyleBackColor = true;
             YearsAgoButton.CheckedChanged += YearsAgoButton_CheckedChanged;
             // 
             // MonthAgoButton
             // 
             MonthAgoButton.AutoSize = true;
-            MonthAgoButton.Location = new Point(82, 3);
+            MonthAgoButton.Location = new Point(59, 3);
             MonthAgoButton.Name = "MonthAgoButton";
-            MonthAgoButton.Size = new Size(84, 19);
+            MonthAgoButton.Size = new Size(61, 19);
             MonthAgoButton.TabIndex = 2;
             MonthAgoButton.TabStop = true;
-            MonthAgoButton.Text = "Month ago";
+            MonthAgoButton.Text = "Month";
             MonthAgoButton.UseVisualStyleBackColor = true;
             MonthAgoButton.CheckedChanged += MonthAgoButton_CheckedChanged;
             // 
@@ -305,10 +305,10 @@
             DaysAgoButton.AutoSize = true;
             DaysAgoButton.Location = new Point(3, 3);
             DaysAgoButton.Name = "DaysAgoButton";
-            DaysAgoButton.Size = new Size(73, 19);
+            DaysAgoButton.Size = new Size(50, 19);
             DaysAgoButton.TabIndex = 1;
             DaysAgoButton.TabStop = true;
-            DaysAgoButton.Text = "Days ago";
+            DaysAgoButton.Text = "Days";
             DaysAgoButton.UseVisualStyleBackColor = true;
             DaysAgoButton.CheckedChanged += DaysAgoButton_CheckedChanged;
             // 
@@ -320,11 +320,10 @@
             AgoGroupBox.Size = new Size(200, 52);
             AgoGroupBox.TabIndex = 2;
             AgoGroupBox.TabStop = false;
-            AgoGroupBox.Text = "Ago";
             // 
             // AgoNumericUpDown
             // 
-            AgoNumericUpDown.Location = new Point(6, 22);
+            AgoNumericUpDown.Location = new Point(6, 19);
             AgoNumericUpDown.Maximum = new decimal(new int[] { 1410065408, 2, 0, 0 });
             AgoNumericUpDown.Name = "AgoNumericUpDown";
             AgoNumericUpDown.Size = new Size(188, 23);
