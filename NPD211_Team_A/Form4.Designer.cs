@@ -350,7 +350,7 @@
             saveToolStripMenuItem.Image = Properties.Resources._352084_ic_guardar_save;
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             saveToolStripMenuItem.ShortcutKeyDisplayString = "";
-            saveToolStripMenuItem.Size = new Size(135, 22);
+            saveToolStripMenuItem.Size = new Size(138, 22);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -359,7 +359,7 @@
             exitToolStripMenuItem.Image = Properties.Resources._352328_to_exit_ic_app;
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            exitToolStripMenuItem.Size = new Size(135, 22);
+            exitToolStripMenuItem.Size = new Size(138, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
