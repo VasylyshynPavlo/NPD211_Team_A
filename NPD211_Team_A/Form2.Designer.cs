@@ -214,6 +214,7 @@
             Margin = new Padding(2);
             Name = "Form2";
             Text = "Show";
+            Resize += Form2_Resize;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);

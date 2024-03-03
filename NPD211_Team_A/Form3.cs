@@ -55,7 +55,7 @@ namespace NPD211_Team_A
 
         public void AddBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (CategoryCB.SelectedIndex != -1 && !string.IsNullOrEmpty(DateDTP.Text) && !string.IsNullOrEmpty(SumTB.Text) && int.TryParse(SumTB.Text, out int sum))
             {
                 form1.AddToList(new Form1.MoneyEntry(CategoryCB.Text, DateDTP.Value, sum));
@@ -64,6 +64,14 @@ namespace NPD211_Team_A
             else
             {
                 MessageBox.Show("Incorrect data", "Add", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void SumTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != '-')
+            {
+                e.Handled = true;
             }
         }
     }

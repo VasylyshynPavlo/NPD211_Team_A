@@ -59,7 +59,7 @@ namespace NPD211_Team_A
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form4 form = new Form4(moneyEntryList);
-            form.Show();
+            form.ShowDialog();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)//hotkeys
@@ -107,7 +107,7 @@ namespace NPD211_Team_A
             {
                 //code
                 Form4 form = new Form4(moneyEntryList);
-                form.Show();
+                form.ShowDialog();
             }
         }
 
@@ -258,7 +258,7 @@ namespace NPD211_Team_A
                     foreach (var item in moneyEntryList)
                     {
                         value += item.CategoryEntry + "\n";
-                        value += item.DateEntry.ToShortDateString() + "\n";
+                        value += item.DateEntry.ToString() + "\n";
                         value += item.SumEntry + "\n";
                     }
                     value += "END";
@@ -293,7 +293,7 @@ namespace NPD211_Team_A
                     foreach (var item in moneyEntryList)
                     {
                         value += item.CategoryEntry + "\n";
-                        value += item.DateEntry.ToShortDateString() + "\n";
+                        value += item.DateEntry.ToString() + "\n";
                         value += item.SumEntry + "\n";
                     }
                     value += "END";
@@ -414,6 +414,15 @@ namespace NPD211_Team_A
             autosave = !autosave;
             if (autosave) { autosaveToolStripMenuItem.Checked = true; }
             else { autosaveToolStripMenuItem.Checked = false; }
+        }
+
+        private void ItemsListView_Resize(object sender, EventArgs e)
+        {
+            int columnWidth = ItemsListView.Width / 3;
+            for (int i = 0; i < ItemsListView.Columns.Count; i++)
+            {
+                ItemsListView.Columns[i].Width = columnWidth;
+            }
         }
     }
 }

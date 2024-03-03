@@ -81,7 +81,7 @@ namespace NPD211_Team_A
             // 
             // DateDTP
             // 
-            DateDTP.CustomFormat = "dd.MM.yyyy";
+            DateDTP.CustomFormat = "dd.MM.yyyy HH:mm:ss";
             DateDTP.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             DateDTP.Format = DateTimePickerFormat.Custom;
             DateDTP.Location = new Point(77, 65);
@@ -106,6 +106,7 @@ namespace NPD211_Team_A
             SumTB.Name = "SumTB";
             SumTB.Size = new Size(170, 23);
             SumTB.TabIndex = 3;
+            SumTB.KeyPress += SumTB_KeyPress;
             // 
             // AddCategoryTB
             // 

@@ -118,5 +118,14 @@ namespace NPD211_Team_A
         {
             Save();
         }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            int columnWidth = listView_MonthYearAlltime.Width / 3;
+            for (int i = 0; i < listView_MonthYearAlltime.Columns.Count; i++)
+            {
+                listView_MonthYearAlltime.Columns[i].Width = columnWidth;
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NPD211_Team_A
 {
@@ -115,9 +116,10 @@ namespace NPD211_Team_A
             foreach (var it in moneyEntryList_filtered)
             {
                 Form1.MoneyEntry item = it;
-                string[] row = { item.CategoryEntry, item.DateEntry.ToShortDateString(), item.SumEntry.ToString() };
+                string[] row = { item.CategoryEntry, item.DateEntry.ToString(), item.SumEntry.ToString() };
                 ItemsListView.Items.Add(new ListViewItem(row));
             }
+            
             checkSum();
         }
 
@@ -184,6 +186,15 @@ namespace NPD211_Team_A
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Save();
+        }
+
+        private void ItemsListView_Resize(object sender, EventArgs e)
+        {
+            int columnWidth = ItemsListView.Width / 3;
+            for (int i = 0; i < ItemsListView.Columns.Count; i++)
+            {
+                ItemsListView.Columns[i].Width = columnWidth;
+            }
         }
     }
 }

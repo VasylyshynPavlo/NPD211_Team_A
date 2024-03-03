@@ -69,6 +69,7 @@
             ItemsListView.TabIndex = 8;
             ItemsListView.UseCompatibleStateImageBehavior = false;
             ItemsListView.View = View.Details;
+            ItemsListView.Resize += ItemsListView_Resize;
             // 
             // Category
             // 
